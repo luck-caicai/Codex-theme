@@ -10,7 +10,7 @@ GPTPLUS、PRO、claude应有尽有！
 
 把 macOS Codex Desktop 改造成高饱和天蓝、粉紫、雾白玻璃、全高角色主视觉与动画宠物结合的初音未来主题。
 
-![Codex Miku Theme v4](output/playwright/codex-miku-theme-v4-full-canvas-pet.png)
+![Codex Miku Theme v4](assets/codex-miku-theme-v4-full-canvas-pet.png)
 
 ## 一键 Skill 安装
 
