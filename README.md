@@ -4,7 +4,7 @@
 
 GPTPLUS、PRO、claude应有尽有！
 
-![image-20260716114401914](README.assets/image-20260716114401914.png)
+<img src="assets/wx.png" width="300" height="300" alt="描述文字">
 
 # Codex Miku Theme
 
