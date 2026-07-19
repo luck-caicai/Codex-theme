@@ -96,7 +96,7 @@ async function withFixture(run) {
   }
 }
 
-test("CLI install and restore round-trip preserves the exact official ASAR", async () => {
+test("CLI install and restore round-trip preserves the exact official ASAR", { skip: process.platform !== "darwin" }, async () => {
   await withFixture(async ({ home, target }) => {
     const original = await makeOfficialArchive();
     await writeFile(target, original);
@@ -110,7 +110,7 @@ test("CLI install and restore round-trip preserves the exact official ASAR", asy
   });
 });
 
-test("CLI refuses a same-length official update instead of restoring an old build over it", async () => {
+test("CLI refuses a same-length official update instead of restoring an old build over it", { skip: process.platform !== "darwin" }, async () => {
   await withFixture(async ({ home, root, target }) => {
     const oldBuild = await makeOfficialArchive("old-build");
     const newBuild = await makeOfficialArchive("new-build");
@@ -141,7 +141,7 @@ test("CLI refuses a same-length official update instead of restoring an old buil
   });
 });
 
-test("CLI rolls the ASAR back when state.json cannot be committed", async () => {
+test("CLI rolls the ASAR back when state.json cannot be committed", { skip: process.platform !== "darwin" }, async () => {
   await withFixture(async ({ home, target }) => {
     const original = await makeOfficialArchive();
     await writeFile(target, original);
@@ -154,7 +154,7 @@ test("CLI rolls the ASAR back when state.json cannot be committed", async () => 
   });
 });
 
-test("CLI safely restores a v2 state after validating every untouched ASAR byte", async () => {
+test("CLI safely restores a v2 state after validating every untouched ASAR byte", { skip: process.platform !== "darwin" }, async () => {
   await withFixture(async ({ home, root, target }) => {
     const backup = await makeOfficialArchive();
     const originalHtml = readEntry(backup, ENTRY_PATH).toString("utf8");

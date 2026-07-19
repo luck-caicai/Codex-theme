@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "assets": "./scripts/build-assets.command",
+    "package:totoro": "powershell -NoProfile -ExecutionPolicy Bypass -File ./scripts/package-totoro-windows.ps1",
     "test": "node --test",
     "check": "node src/theme-patch.mjs check"
   }

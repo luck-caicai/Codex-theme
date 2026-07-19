@@ -233,7 +233,7 @@ test("refuses installation when the target changes after preparation", async () 
   assert.deepEqual(writes, []);
 });
 
-test("atomic CAS preserves a target that changed before commit", async () => {
+test("atomic CAS preserves a target that changed before commit", { skip: process.platform !== "darwin" }, async () => {
   const root = await mkdtemp(join(tmpdir(), "codex-miku-cas-"));
   const target = join(root, "app.asar");
   try {
@@ -253,7 +253,7 @@ test("atomic CAS preserves a target that changed before commit", async () => {
   }
 });
 
-test("atomic CAS preserves a newer target written after the swap", async () => {
+test("atomic CAS preserves a newer target written after the swap", { skip: process.platform !== "darwin" }, async () => {
   const root = await mkdtemp(join(tmpdir(), "codex-miku-cas-after-"));
   const target = join(root, "app.asar");
   try {

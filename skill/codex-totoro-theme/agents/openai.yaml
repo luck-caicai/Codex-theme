@@ -1,0 +1,4 @@
+interface:
+  display_name: "Codex Totoro Night"
+  short_description: "Customizable black Codex dashboard with a Totoro pet"
+  default_prompt: "Use $codex-totoro-theme to install the Totoro Night dashboard, custom background picker, theme, and pet on this Windows Codex Desktop."

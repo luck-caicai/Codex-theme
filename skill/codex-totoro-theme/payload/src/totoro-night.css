@@ -1,0 +1,668 @@
+/* CODEX_TOTORO_NIGHT_THEME v1 RUNTIME */
+@layer theme, base, components, utilities;
+
+:root[data-codex-window-type="electron"] {
+  color-scheme: dark !important;
+  --night-ink: #e7e3d5;
+  --corner-radius-scale: 1 !important;
+  --startup-background: #090b0a !important;
+  --startup-logo-shimmer-base: #d2b66f !important;
+  --color-background-surface: #111512e8 !important;
+  --color-background-surface-under: #080a09 !important;
+  --color-background-editor-opaque: #0e110f !important;
+  --color-background-elevated-primary: #171c18f2 !important;
+  --color-background-elevated-primary-opaque: #171c18 !important;
+  --color-background-elevated-secondary: #1b241deb !important;
+  --color-background-elevated-secondary-opaque: #1b241d !important;
+  --color-background-control: #1a201beb !important;
+  --color-background-control-opaque: #1a201b !important;
+  --color-background-panel: #111512f2 !important;
+  --color-background-button-primary: #536b4b !important;
+  --color-background-button-primary-hover: #657e5b !important;
+  --color-background-button-primary-active: #40523a !important;
+  --color-background-button-secondary: #202820e8 !important;
+  --color-background-button-secondary-hover: #293329 !important;
+  --color-background-button-secondary-active: #333d32 !important;
+  --color-background-accent: #d2b66f24 !important;
+  --color-background-accent-hover: #6a9a8830 !important;
+  --color-background-accent-active: #a96e5930 !important;
+  --color-text-foreground: #e7e3d5 !important;
+  --color-text-foreground-secondary: #b1b5aa !important;
+  --color-text-foreground-tertiary: #848b82 !important;
+  --color-text-accent: #d2b66f !important;
+  --color-text-link: #89b6a0 !important;
+  --color-icon-primary: #d9d6ca !important;
+  --color-icon-secondary: #aeb4aa !important;
+  --color-icon-tertiary: #7e877f !important;
+  --color-border: #3e4a428c !important;
+  --color-border-light: #303a33b8 !important;
+  --color-border-heavy: #637361b8 !important;
+  --color-border-focus: #d2b66f !important;
+  --vscode-editor-background: #0e110fe8 !important;
+  --vscode-sideBar-background: #101511eb !important;
+  --vscode-input-background: #171c18ed !important;
+  --vscode-input-border: #526154 !important;
+  --vscode-input-placeholderForeground: #7e877f !important;
+  --vscode-dropdown-background: #171c18f5 !important;
+  --vscode-focusBorder: #d2b66f !important;
+  --vscode-button-background: #536b4b !important;
+  --vscode-button-hoverBackground: #657e5b !important;
+  --vscode-list-hoverBackground: #6a9a8824 !important;
+  --vscode-list-activeSelectionBackground: #d2b66f29 !important;
+  --vscode-textLink-foreground: #89b6a0 !important;
+  --vscode-scrollbarSlider-background: #63736142 !important;
+  --vscode-terminal-background: #080a09 !important;
+  --vscode-terminal-foreground: #e1dfd5 !important;
+  --color-token-main-surface-primary: #11151254 !important;
+  --color-token-side-bar-background: #101511eb !important;
+  --color-token-foreground: #e7e3d5 !important;
+  --color-token-input-background: #171c18ed !important;
+  --totoro-sidebar-project-text: #b8c3bd;
+  --totoro-sidebar-thread-text: #cbd2ce;
+  --totoro-sidebar-active-text: #f1f4f2;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  color: var(--night-ink) !important;
+  background: #080a09 !important;
+}
+
+#root {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  isolation: isolate;
+  color: var(--night-ink) !important;
+  background:
+    linear-gradient(90deg, #090b0af5 0 20%, #090b0a38 20% 100%),
+    linear-gradient(145deg, #080a09, #172019 52%, #332f24) !important;
+}
+
+:root.compact-window,
+:root.compact-window body,
+:root.compact-window #root {
+  background: transparent !important;
+}
+
+:root.compact-window .codex-avatar-root {
+  width: 88px !important;
+  height: 121px !important;
+  background-color: transparent !important;
+  background-repeat: no-repeat !important;
+  background-size: 1200% 1300% !important;
+  filter: drop-shadow(0 8px 9px #000b);
+  animation: totoro-night-avatar-idle 2.8s steps(10) infinite alternate !important;
+}
+
+@keyframes totoro-night-avatar-idle {
+  from { background-position: 0 0; }
+  to { background-position: -880px 0; }
+}
+
+.app-shell-left-panel {
+  background:
+    linear-gradient(180deg, #101411f5, #121a15ed 64%, #262319df),
+    url("__TOTORO_NIGHT_SIDEBAR__") center / cover no-repeat !important;
+  border-right: 1px solid #3e4a42b8 !important;
+  box-shadow: 2px 0 0 #63736124 inset, 8px 0 24px #0009 !important;
+  backdrop-filter: blur(14px) saturate(.85);
+}
+
+[data-app-action-sidebar-thread-row],
+[data-app-action-sidebar-project-row] {
+  border-radius: 6px !important;
+}
+
+[data-app-action-sidebar-thread-active="true"] {
+  color: #f0ead8 !important;
+  background: linear-gradient(90deg, #536b4b5c, #6a9a8830 64%, #d2b66f24) !important;
+  box-shadow: 0 0 0 1px #63736180, 0 5px 14px #0008 !important;
+}
+
+:root[data-totoro-night-plan="plus"] {
+  --totoro-sidebar-project-text: #8fcaa8;
+  --totoro-sidebar-thread-text: #b9dcc7;
+  --totoro-sidebar-active-text: #eaf7ef;
+}
+
+:root[data-totoro-night-plan="pro"] {
+  --totoro-sidebar-project-text: #d8ba67;
+  --totoro-sidebar-thread-text: #e6d29a;
+  --totoro-sidebar-active-text: #fff0bd;
+}
+
+[data-app-action-sidebar-project-row] .text-fade-truncate {
+  color: var(--totoro-sidebar-project-text) !important;
+}
+
+[data-app-action-sidebar-thread-row] [data-thread-title] {
+  color: var(--totoro-sidebar-thread-text) !important;
+}
+
+[data-app-action-sidebar-thread-active="true"] [data-thread-title] {
+  color: var(--totoro-sidebar-active-text) !important;
+}
+
+.totoro-night-plan-picker {
+  display: grid;
+  gap: 6px;
+  margin: 3px 6px 5px;
+  padding: 8px;
+  border-block: 1px solid #3e4a427a;
+}
+
+.totoro-night-plan-picker-label {
+  color: #9da69f;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.totoro-night-plan-options {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2px;
+  padding: 2px;
+  border: 1px solid #3e4a428c;
+  border-radius: 6px;
+  background: #0d110ee8;
+}
+
+.totoro-night-plan-option {
+  display: inline-flex;
+  min-width: 0;
+  height: 26px;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 0 6px;
+  color: #b8c3bd;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.totoro-night-plan-option::before {
+  width: 7px;
+  height: 7px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: currentColor;
+  content: "";
+}
+
+.totoro-night-plan-option[data-plan="plus"] {
+  color: #8fcaa8;
+}
+
+.totoro-night-plan-option[data-plan="pro"] {
+  color: #d8ba67;
+}
+
+.totoro-night-plan-option:hover {
+  background: #ffffff0d;
+}
+
+.totoro-night-plan-option[aria-pressed="true"] {
+  color: var(--totoro-sidebar-active-text);
+  background: #536b4b52;
+  box-shadow: 0 0 0 1px currentColor inset;
+}
+
+.main-surface,
+.browser-main-surface {
+  min-height: 100%;
+  background:
+    linear-gradient(180deg, #080a0914 0 34%, #080a095c 58%, #080a09d1 100%),
+    var(--totoro-night-hero-image, url("__TOTORO_NIGHT_HERO__")) center / cover no-repeat !important;
+  border: 1px solid #3e4a42a3 !important;
+  border-radius: 8px 0 0 0 !important;
+  box-shadow: 0 0 0 1px #63736124 inset, 0 8px 24px #000a !important;
+}
+
+.app-header-tint {
+  background: linear-gradient(90deg, #111512f5, #172019ed 58%, #272319e8) !important;
+  border-bottom: 1px solid #3e4a427a !important;
+  backdrop-filter: blur(14px) saturate(.9);
+}
+
+.app-header-divider {
+  background: linear-gradient(90deg, transparent, #536b4b, #d2b66f, #6a9a88, transparent) !important;
+  opacity: .58;
+}
+
+[data-thread-title] {
+  color: #eee9da !important;
+  font-weight: 700 !important;
+  text-shadow: 0 1px 0 #000;
+}
+
+.composer-surface-chrome {
+  color: #e7e3d5 !important;
+  background: #141915f2 !important;
+  border: 1px solid #526154 !important;
+  border-radius: 8px !important;
+  box-shadow: 0 0 0 1px #6373611f inset, 0 7px 18px #0009 !important;
+  backdrop-filter: blur(16px) saturate(.9);
+}
+
+[data-user-message-bubble] {
+  color: #e7e3d5 !important;
+  background: linear-gradient(135deg, #243026f2, #1b2824f0 54%, #312820ed) !important;
+  border: 1px solid #52615499 !important;
+  border-radius: 8px !important;
+  box-shadow: 0 5px 14px #0008 !important;
+}
+
+[data-local-conversation-final-assistant] {
+  padding: 15px 17px;
+  color: #e7e3d5 !important;
+  border: 1px solid #3e4a4275;
+  border-radius: 8px;
+  background: #111512e8;
+  box-shadow: 0 7px 18px #0008;
+  backdrop-filter: blur(12px) saturate(.86);
+}
+
+[data-codex-approval-surface],
+[data-mcp-app-card],
+[data-composer-attachment-pill],
+.codex-review-diff-card {
+  border: 1px solid #3e4a4280 !important;
+  border-radius: 8px !important;
+  background: #171c18ed !important;
+  box-shadow: 0 7px 18px #0008 !important;
+}
+
+[role="dialog"][data-state="open"],
+[role="menu"][data-state="open"],
+[role="listbox"][data-state="open"],
+[data-radix-menu-content],
+[data-radix-popper-content-wrapper] > div {
+  color: #e7e3d5 !important;
+  border-color: #52615499 !important;
+  background: #171c18f5 !important;
+  box-shadow: 0 12px 34px #000c !important;
+  backdrop-filter: blur(18px) saturate(.88);
+}
+
+textarea,
+input,
+[contenteditable="true"] {
+  color: #e7e3d5 !important;
+  caret-color: #d2b66f !important;
+}
+
+button:focus-visible,
+a:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid #d2b66f !important;
+  outline-offset: 2px !important;
+}
+
+pre,
+.monaco-editor,
+.xterm {
+  border: 1px solid #52615452 !important;
+  border-radius: 6px !important;
+  box-shadow: 0 7px 18px #0008 !important;
+}
+
+::selection {
+  color: #f4efe2;
+  background: #6b5a35cc;
+}
+
+::-webkit-scrollbar-thumb {
+  border: 3px solid transparent;
+  border-radius: 8px;
+  background: linear-gradient(#536b4b, #d2b66f, #6a9a88, #a96e59) padding-box !important;
+}
+
+.startup-loader {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #080a09, #172019 54%, #332f24) !important;
+  -webkit-app-region: drag;
+}
+
+.startup-loader__logo {
+  position: relative;
+  width: 56px;
+  height: 56px;
+}
+
+.startup-loader__base,
+.startup-loader__overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.startup-loader__base {
+  color: #d2b66f !important;
+  filter: drop-shadow(0 0 14px #d2b66f52);
+}
+
+/* Empty-task dashboard */
+.main-surface:has([data-totoro-night-home="true"]) {
+  background: #090c0a !important;
+}
+
+[data-totoro-night-home="true"] {
+  min-height: 100% !important;
+  padding-top: 38px !important;
+}
+
+[data-totoro-night-home-stage="true"] {
+  display: block !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  overflow-y: auto;
+}
+
+[data-totoro-night-composer-stage="true"] {
+  min-height: 0 !important;
+  flex: 0 0 auto !important;
+}
+
+[data-totoro-night-home-intro="true"] {
+  display: flex !important;
+  width: min(100%, 1160px) !important;
+  max-width: none !important;
+  flex-direction: column !important;
+  gap: 14px !important;
+  margin: 0 auto !important;
+  padding: 0 clamp(18px, 3vw, 36px) !important;
+}
+
+[data-totoro-night-native-title="true"] {
+  display: none !important;
+}
+
+#totoro-night-dashboard {
+  position: relative;
+  display: flex;
+  min-height: 218px;
+  align-items: center;
+  overflow: hidden;
+  padding: 30px clamp(24px, 4vw, 50px);
+  color: #f0ecdf;
+  border: 1px solid #637361b8;
+  border-radius: 8px;
+  background:
+    linear-gradient(90deg, #070908f7 0%, #0a0d0be8 34%, #0a0d0b52 64%, #0a0d0b14 100%),
+    var(--totoro-night-hero-image, url("__TOTORO_NIGHT_HERO__")) center 31% / cover no-repeat;
+  box-shadow: 0 10px 28px #000b, 0 0 0 1px #d2b66f1f inset;
+  isolation: isolate;
+}
+
+#totoro-night-dashboard::after {
+  position: absolute;
+  inset: 10px;
+  z-index: -1;
+  content: "";
+  pointer-events: none;
+  border: 1px solid #d2b66f29;
+  border-radius: 5px;
+}
+
+.totoro-night-dashboard-copy {
+  width: min(56%, 580px);
+  text-shadow: 0 2px 8px #000, 0 6px 20px #000c;
+}
+
+.totoro-night-dashboard-label {
+  display: block;
+  margin-bottom: 13px;
+  color: #d2b66f;
+  font: 800 12px/1.2 ui-monospace, monospace;
+  letter-spacing: 0;
+}
+
+.totoro-night-dashboard-copy h2 {
+  max-width: 12em;
+  margin: 0;
+  color: #f1eee4;
+  font-size: 29px;
+  font-weight: 750;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+
+.totoro-night-dashboard-copy p {
+  max-width: 31em;
+  margin: 13px 0 0;
+  color: #c6c8bf;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+[data-totoro-night-suggestions-wrap="true"] {
+  display: none !important;
+}
+
+#totoro-night-actions {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+[data-totoro-night-card] {
+  display: flex !important;
+  min-height: 104px !important;
+  min-width: 0 !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: space-between !important;
+  gap: 13px !important;
+  padding: 14px 15px !important;
+  color: #e7e3d5 !important;
+  border: 1px solid #465249b8 !important;
+  border-top-color: #7b8c77 !important;
+  border-radius: 8px !important;
+  background: #151a16ed !important;
+  box-shadow: 0 7px 18px #0007, 0 0 0 1px #ffffff08 inset !important;
+  text-align: left !important;
+  transition: border-color 140ms ease, background-color 140ms ease, transform 140ms ease !important;
+}
+
+[data-totoro-night-card]:hover {
+  color: #f4efe2 !important;
+  border-color: #788871 !important;
+  background: #1c241ded !important;
+  transform: translateY(-2px) !important;
+}
+
+[data-totoro-night-card="2"] {
+  border-top-color: #d2b66f !important;
+}
+
+[data-totoro-night-card="3"] {
+  border-top-color: #6a9a88 !important;
+}
+
+[data-totoro-night-card="4"] {
+  border-top-color: #a96e59 !important;
+}
+
+.totoro-night-action-icon {
+  display: flex !important;
+  width: 32px !important;
+  height: 32px !important;
+  flex: 0 0 32px;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #d2b66f !important;
+  border: 1px solid #63736175;
+  border-radius: 50%;
+  background: #263028d6;
+  font: 700 11px/1 ui-monospace, monospace;
+}
+
+[data-totoro-night-card="3"] .totoro-night-action-icon {
+  color: #89b6a0 !important;
+}
+
+[data-totoro-night-card="4"] .totoro-night-action-icon {
+  color: #c68a73 !important;
+}
+
+.totoro-night-action-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.totoro-night-action-label {
+  max-width: 100%;
+  color: #deddd4;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+/* Composer companion */
+.totoro-night-composer-host {
+  position: relative;
+}
+
+.totoro-night-pet {
+  position: absolute;
+  right: -91px;
+  bottom: 2px;
+  z-index: 26;
+  width: 82px;
+  height: 112px;
+  padding: 0;
+  overflow: visible;
+  cursor: pointer;
+  border: 0;
+  background: transparent;
+  filter: drop-shadow(0 9px 10px #000b);
+  transition: filter 140ms ease, transform 140ms ease;
+}
+
+.totoro-night-pet:hover {
+  filter: drop-shadow(0 10px 12px #000d) brightness(1.08);
+  transform: translateY(-2px);
+}
+
+.totoro-night-pet-sprite {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: block;
+  width: 128px;
+  height: 176px;
+  background-image: url("__TOTORO_NIGHT_PET__");
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: 1536px 2288px;
+  transform: scale(.63);
+  transform-origin: right bottom;
+  animation: totoro-night-idle 2.8s steps(10) infinite alternate;
+}
+
+.totoro-night-pet[data-state="thinking"] .totoro-night-pet-sprite {
+  animation: totoro-night-thinking 1.55s steps(7) infinite alternate;
+}
+
+.totoro-night-pet[data-state="hopping"] .totoro-night-pet-sprite {
+  animation: totoro-night-hop .82s steps(9) 1;
+}
+
+@keyframes totoro-night-idle {
+  from { background-position: 0 0; }
+  to { background-position: -1280px 0; }
+}
+
+@keyframes totoro-night-thinking {
+  from { background-position: 0 -880px; }
+  to { background-position: -896px -880px; }
+}
+
+@keyframes totoro-night-hop {
+  from { background-position: 0 -1408px; }
+  to { background-position: -1152px -1408px; }
+}
+
+@media (max-width: 1100px) {
+  #totoro-night-actions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  #totoro-night-dashboard {
+    min-height: 188px;
+  }
+
+  .totoro-night-pet {
+    display: none;
+  }
+}
+
+@media (max-width: 720px) {
+  [data-totoro-night-home-intro="true"] {
+    padding-inline: 14px !important;
+  }
+
+  #totoro-night-dashboard {
+    min-height: 164px;
+    padding: 22px;
+    background-position: 60% 31%;
+  }
+
+  .totoro-night-dashboard-copy {
+    width: 72%;
+  }
+
+  .totoro-night-dashboard-copy h2 {
+    font-size: 23px;
+  }
+
+  .totoro-night-dashboard-copy p {
+    display: none;
+  }
+}
+
+@media (max-height: 720px) {
+  #totoro-night-dashboard {
+    min-height: 148px;
+    padding-block: 20px;
+  }
+
+  .totoro-night-dashboard-copy p {
+    margin-top: 8px;
+    line-height: 1.45;
+  }
+
+  [data-totoro-night-card] {
+    min-height: 82px !important;
+    padding-block: 10px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-totoro-night-card],
+  .totoro-night-pet {
+    transition: none !important;
+  }
+
+  .totoro-night-pet-sprite {
+    animation: none !important;
+  }
+
+  :root.compact-window .codex-avatar-root {
+    background-position: 0 0 !important;
+    animation: none !important;
+  }
+}
